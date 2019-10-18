@@ -4,3 +4,4 @@
 /clover-report.xml
 /tests-integration/vendor
 /tests-integration/composer.lock
+.php_cs.cache

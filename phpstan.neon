@@ -1,0 +1,25 @@
+parameters:
+    autoload_files:
+        - vendor/autoload.php
+    paths:
+        - src
+        - tests
+        - includes
+        - includes-dev
+    ignoreErrors:
+          - '#PHPDoc tag @return contains unresolvable type#' # PHPStan 0.9 does not deal with \Generator
+
+services:
+    errorFormatter.junit:
+        class: RQuadling\PHPStan\ErrorFormatter\JunitErrorFormatter
+    relativePathHelper:
+        class: PHPStan\File\RelativePathHelper
+        dynamic: true
+        autowired: true
+
+    simpleRelativePathHelper:
+        class: PHPStan\File\RelativePathHelper
+        factory: PHPStan\File\SimpleRelativePathHelper
+        arguments:
+            currentWorkingDirectory: %currentWorkingDirectory%
+        autowired: false

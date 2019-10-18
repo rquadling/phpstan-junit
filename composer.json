@@ -1,5 +1,5 @@
 {
-  "name": "mavimo/phpstan-junit",
+  "name": "rquadling/phpstan-junit",
   "description": "PHPStan JUnit error reporter",
   "type": "phpstan-extension",
   "license": [
@@ -9,28 +9,25 @@
     {
       "name": "Marco Vito Moscaritolo",
       "email": "mavimo@gmail.com"
+    },
+    {
+      "name": "Richard Quadling",
+      "email": "RQuadling@GMail.com"
     }
   ],
   "minimum-stability": "stable",
-  "extra": {
-    "phpstan": {
-      "includes": [
-        "extension.neon"
-      ]
-    }
-  },
   "require": {
+    "ext-dom": "*",
     "php": "~7.0",
-    "phpstan/phpstan": "*",
-    "ext-dom": "*"
+    "phpstan/phpstan": "*"
   },
   "require-dev": {
-    "phpunit/phpunit": "*",
-    "slevomat/coding-standard": "*"
+    "friendsofphp/php-cs-fixer": "^2.15",
+    "phpunit/phpunit": "*"
   },
   "autoload": {
     "psr-4": {
-      "Mavimo\\PHPStan\\ErrorFormatter\\": "src/"
+      "RQuadling\\PHPStan\\ErrorFormatter\\": "src/"
     },
     "files": [
       "includes/polyfill.php"
@@ -38,10 +35,20 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Mavimo\\Tests\\PHPStan\\ErrorFormatter\\": "tests/"
+      "RQuadling\\Tests\\PHPStan\\ErrorFormatter\\": "tests/"
     },
     "files": [
       "includes-dev/polyfill.php"
     ]
+  },
+  "scripts": {
+    "run-all":[
+      "composer run-cs-fixer",
+      "composer run-sa",
+      "composer run-tests"
+    ],
+    "run-cs-fixer":"vendor/bin/php-cs-fixer fix -vvv --config=.php_cs.dist --using-cache=no --path-mode=intersection .",
+    "run-tests": "vendor/bin/phpunit --debug",
+    "run-sa": "vendor/bin/phpstan analyse --ansi --no-progress --configuration phpstan.neon --debug --level max includes includes-dev src tests"
   }
 }
