@@ -9,6 +9,6 @@ if (!interface_exists(RelativePathHelper::class)) {
     {
         public function getRelativePath(string $filename): string;
     }
-    
+
     return RelativePathHelper::class;
 }

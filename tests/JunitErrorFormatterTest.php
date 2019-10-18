@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Mavimo\Tests\PHPStan\ErrorFormatter;
+namespace RQuadling\Tests\PHPStan\ErrorFormatter;
 
 use DOMDocument;
 use Generator;
-use Mavimo\PHPStan\ErrorFormatter\JunitErrorFormatter;
 use PHPStan\Command\ErrorFormatter\TestBaseFormatter;
 use PHPStan\File\SimpleRelativePathHelper;
+use RQuadling\PHPStan\ErrorFormatter\JunitErrorFormatter;
 
 class JunitErrorFormatterTest extends TestBaseFormatter
 {
@@ -133,6 +133,7 @@ class JunitErrorFormatterTest extends TestBaseFormatter
      * Test generated use cases for JUnit output format.
      *
      * @dataProvider dataFormatterOutputProvider
+     *
      * @param string $message
      * @param int    $exitCode
      * @param int    $numFileErrors

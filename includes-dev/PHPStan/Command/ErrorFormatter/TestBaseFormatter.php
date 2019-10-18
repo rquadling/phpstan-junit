@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace PHPStan\Command\ErrorFormatter;
 
@@ -11,7 +13,7 @@ use Symfony\Component\Console\Output\StreamOutput;
 if (!class_exists(TestBaseFormatter::class)) {
     abstract class TestBaseFormatter extends \PHPStan\Testing\TestCase
     {
-         const DIRECTORY_PATH = '/data/folder/with space/and unicode 😃/project';
+        const DIRECTORY_PATH = '/data/folder/with space/and unicode 😃/project';
 
         /** @var StreamOutput */
         private $outputStream;
@@ -80,8 +82,7 @@ if (!class_exists(TestBaseFormatter::class)) {
                 $fileErrors,
                 $genericErrors,
                 false,
-                self::DIRECTORY_PATH,
-                null
+                self::DIRECTORY_PATH
             );
         }
 
@@ -96,7 +97,6 @@ if (!class_exists(TestBaseFormatter::class)) {
 
             return implode("\n", $result);
         }
-
     }
 
     return TestBaseFormatter::class;

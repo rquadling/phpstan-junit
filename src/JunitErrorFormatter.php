@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mavimo\PHPStan\ErrorFormatter;
+namespace RQuadling\PHPStan\ErrorFormatter;
 
 use DOMDocument;
 use DOMElement;
@@ -11,12 +11,11 @@ use PHPStan\Command\ErrorFormatter\ErrorFormatter;
 use PHPStan\File\RelativePathHelper;
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Style\OutputStyle;
-use function sprintf;
 
 class JunitErrorFormatter implements ErrorFormatter
 {
     /**
-     * @var \PHPStan\File\RelativePathHelper
+     * @var RelativePathHelper
      */
     private $relativePathHelper;
 
