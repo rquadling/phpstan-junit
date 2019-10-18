@@ -1,3 +1,3 @@
 <?php
-pollyfiller(__DIR__);
 
+pollyfiller(__DIR__);
