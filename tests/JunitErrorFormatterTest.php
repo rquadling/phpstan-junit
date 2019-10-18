@@ -66,9 +66,6 @@ class JunitErrorFormatterTest extends TestBaseFormatter
             0,
             '<?xml version="1.0" encoding="UTF-8"?>
 <testsuite failures="4" name="phpstan" tests="4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/junit-team/junit5/r5.5.1/platform-tests/src/test/resources/jenkins-junit.xsd">
-  <testcase name="folder with unicode &#x1F603;/file name with &quot;spaces&quot; and unicode &#x1F603;.php:2">
-    <failure message="Bar" />
-  </testcase>
   <testcase name="folder with unicode &#x1F603;/file name with &quot;spaces&quot; and unicode &#x1F603;.php:4">
     <failure message="Foo" />
   </testcase>
@@ -77,6 +74,9 @@ class JunitErrorFormatterTest extends TestBaseFormatter
   </testcase>
   <testcase name="foo.php:5">
     <failure message="Bar"/>
+  </testcase>
+  <testcase name="folder with unicode &#x1F603;/file name with &quot;spaces&quot; and unicode &#x1F603;.php:2">
+    <failure message="Bar" />
   </testcase>
 </testsuite>
 ',
@@ -106,9 +106,6 @@ class JunitErrorFormatterTest extends TestBaseFormatter
             2,
             '<?xml version="1.0" encoding="UTF-8"?>
 <testsuite failures="6" name="phpstan" tests="6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/junit-team/junit5/r5.5.1/platform-tests/src/test/resources/jenkins-junit.xsd">
-  <testcase name="folder with unicode &#x1F603;/file name with &quot;spaces&quot; and unicode &#x1F603;.php:2">
-    <failure message="Bar" />
-  </testcase>
   <testcase name="folder with unicode &#x1F603;/file name with &quot;spaces&quot; and unicode &#x1F603;.php:4">
     <failure message="Foo" />
   </testcase>
@@ -117,6 +114,9 @@ class JunitErrorFormatterTest extends TestBaseFormatter
   </testcase>
   <testcase name="foo.php:5">
     <failure message="Bar"/>
+  </testcase>
+  <testcase name="folder with unicode &#x1F603;/file name with &quot;spaces&quot; and unicode &#x1F603;.php:2">
+    <failure message="Bar" />
   </testcase>
   <testcase name="Generic error">
     <failure message="first generic error" />
@@ -145,14 +145,14 @@ class JunitErrorFormatterTest extends TestBaseFormatter
         int $numFileErrors,
         int $numGenericErrors,
         string $expected
-    ): void {
+    ) {
         $formatter = new JunitErrorFormatter(new SimpleRelativePathHelper(self::DIRECTORY_PATH));
 
         $this->assertSame($exitCode, $formatter->formatErrors(
             $this->getAnalysisResult($numFileErrors, $numGenericErrors),
             $this->getErrorConsoleStyle()
         ), sprintf('%s: response code do not match', $message));
-        
+
         $xml = new DOMDocument();
         $xml->loadXML($this->getOutputContent());
 

@@ -62,7 +62,7 @@ class JunitErrorFormatter implements ErrorFormatter
         return intval($analysisResult->hasErrors());
     }
 
-    private function createTestCase(DOMDocument $dom, DOMElement $testsuite, string $reference, ?string $message = null): void
+    private function createTestCase(DOMDocument $dom, DOMElement $testsuite, string $reference, string $message = null)
     {
         $testcase = $dom->createElement('testcase');
         $testcase->setAttribute('name', $reference);
