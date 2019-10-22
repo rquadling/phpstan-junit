@@ -23,6 +23,7 @@ before_script:
 
 script:
   - composer run-all
+  - composer run-sa-junit
   - if [[ "$COVERAGE" == "true" ]]; then
       xdebug-enable;
       vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover;
