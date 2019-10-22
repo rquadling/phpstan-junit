@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.4.1 - 2019-10-22
+
+### Changes
+- Simplify user's requirements to use this error formatter
+- Refactor dependency of directory to be the required directory rather than a directory service as getting the service
+  loaded via the autoloader that is within the PHAR is difficult and frankly not worth the effort.
+
 ## v0.4.0 - 2019-10-22
 
 ### Changes
