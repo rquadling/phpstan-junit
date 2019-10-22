@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.4.2 - 2019-10-22
+
+### Changes
+- Clean up the files included in the package.
+
 ## v0.4.1 - 2019-10-22
 
 ### Changes
