@@ -1,5 +1,16 @@
 # PHPStan JUnit error reporter
 
+[![Build Status](https://img.shields.io/travis/rquadling/phpstan-junit.svg?style=for-the-badge&logo=travis)](https://travis-ci.org/rquadling/phpstan-junit)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/rquadling/phpstan-junit.svg?style=for-the-badge&logo=scrutinizer)](https://scrutinizer-ci.com/g/rquadling/phpstan-junit/)
+[![GitHub issues](https://img.shields.io/github/issues/rquadling/phpstan-junit.svg?style=for-the-badge&logo=github)](https://github.com/rquadling/phpstan-junit/issues)
+
+[![PHP Version](https://img.shields.io/packagist/php-v/rquadling/phpstan-junit.svg?style=for-the-badge)](https://github.com/rquadling/phpstan-junit)
+[![Stable Version](https://img.shields.io/packagist/v/rquadling/phpstan-junit.svg?style=for-the-badge&label=Latest)](https://packagist.org/packages/rquadling/phpstan-junit)
+
+[![Total Downloads](https://img.shields.io/packagist/dt/rquadling/phpstan-junit.svg?style=for-the-badge&label=Total+downloads)](https://packagist.org/packages/rquadling/phpstan-junit)
+[![Monthly Downloads](https://img.shields.io/packagist/dm/rquadling/phpstan-junit.svg?style=for-the-badge&label=Monthly+downloads)](https://packagist.org/packages/rquadling/phpstan-junit)
+[![Daily Downloads](https://img.shields.io/packagist/dd/rquadling/phpstan-junit.svg?style=for-the-badge&label=Daily+downloads)](https://packagist.org/packages/rquadling/phpstan-junit)
+
 ## DISCLAIMER
 The code in this library is heavily (and I mean VERY VERY heavily) based upon the work in
 [mavimo/phpstan-junit](https://github.com/mavimo/phpstan-junit).
