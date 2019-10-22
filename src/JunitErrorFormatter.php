@@ -9,8 +9,8 @@ use DOMElement;
 use PHPStan\Command\AnalysisResult;
 use PHPStan\Command\ErrorFormatter\ErrorFormatter;
 use PHPStan\File\RelativePathHelper;
-use Symfony\Component\Console\Formatter\OutputFormatter;
-use Symfony\Component\Console\Style\OutputStyle;
+use PHPStanVendor\Symfony\Component\Console\Formatter\OutputFormatter;
+use PHPStanVendor\Symfony\Component\Console\Style\OutputStyle;
 
 class JunitErrorFormatter implements ErrorFormatter
 {
