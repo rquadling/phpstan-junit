@@ -48,6 +48,7 @@
     ],
     "run-cs-fixer":"vendor/bin/php-cs-fixer fix -vvv --config=.php_cs.dist --using-cache=no --path-mode=intersection .",
     "run-tests": "vendor/bin/phpunit --debug",
-    "run-sa": "vendor/bin/phpstan analyse --ansi --no-progress --configuration phpstan.neon --debug --level max includes includes-dev src tests"
+    "run-sa": "vendor/bin/phpstan analyse --ansi --no-progress --configuration phpstan.neon --debug --level max includes includes-dev src tests",
+    "run-sa-junit": "composer run-sa -- --errorFormat junit"
   }
 }
