@@ -18,15 +18,15 @@ before_install:
   - xdebug-disable
 
 before_script:
-  - travis_retry composer update --no-interaction --prefer-source --prefer-stable
+  - travis_retry composer global require hirak/prestissimo
+  - travis_retry composer update --no-interaction --prefer-source --prefer-stable --classmap-authoritative
 
 script:
+  - composer run-all
   - if [[ "$COVERAGE" == "true" ]]; then
       xdebug-enable;
       vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover;
       xdebug-disable;
-    else
-      vendor/bin/phpunit;
     fi
 
 after_script:
