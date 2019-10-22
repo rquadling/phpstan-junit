@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace PHPStan\File;
 
-class SimpleRelativePathHelper implements RelativePathHelper
+class SimpleRelativePathHelper
 {
     /** @var string */
     private $currentWorkingDirectory;
 
-    public function __construct(string $currentWorkingDirectory)
+    public function __construct(string $currentWorkingDirectory = null)
     {
-        $this->currentWorkingDirectory = $currentWorkingDirectory;
+        $this->currentWorkingDirectory = $currentWorkingDirectory ?? getcwd();
     }
 
     public function getRelativePath(string $filename): string

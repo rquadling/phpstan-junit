@@ -7,7 +7,6 @@ namespace RQuadling\Tests\PHPStan\ErrorFormatter;
 use DOMDocument;
 use Generator;
 use PHPStan\Command\ErrorFormatter\TestBaseFormatter;
-use PHPStan\File\SimpleRelativePathHelper;
 use RQuadling\PHPStan\ErrorFormatter\JunitErrorFormatter;
 
 class JunitErrorFormatterTest extends TestBaseFormatter
@@ -147,7 +146,7 @@ class JunitErrorFormatterTest extends TestBaseFormatter
         int $numGenericErrors,
         string $expected
     ) {
-        $formatter = new JunitErrorFormatter(new SimpleRelativePathHelper(self::DIRECTORY_PATH));
+        $formatter = new JunitErrorFormatter(self::DIRECTORY_PATH);
 
         $this->assertSame($exitCode, $formatter->formatErrors(
             $this->getAnalysisResult($numFileErrors, $numGenericErrors),

@@ -8,20 +8,20 @@ use DOMDocument;
 use DOMElement;
 use PHPStan\Command\AnalysisResult;
 use PHPStan\Command\ErrorFormatter\ErrorFormatter;
-use PHPStan\File\RelativePathHelper;
+use PHPStan\File\SimpleRelativePathHelper;
 use PHPStanVendor\Symfony\Component\Console\Formatter\OutputFormatter;
 use PHPStanVendor\Symfony\Component\Console\Style\OutputStyle;
 
 class JunitErrorFormatter implements ErrorFormatter
 {
     /**
-     * @var RelativePathHelper
+     * @var SimpleRelativePathHelper
      */
     private $relativePathHelper;
 
-    public function __construct(RelativePathHelper $relativePathHelper)
+    public function __construct(string $relativePath = null)
     {
-        $this->relativePathHelper = $relativePathHelper;
+        $this->relativePathHelper = new SimpleRelativePathHelper($relativePath);
     }
 
     public function formatErrors(
