@@ -12,15 +12,3 @@ parameters:
 services:
     errorFormatter.junit:
         class: RQuadling\PHPStan\ErrorFormatter\JunitErrorFormatter
-
-    relativePathHelper:
-        class: PHPStan\File\RelativePathHelper
-        dynamic: true
-        autowired: true
-
-    simpleRelativePathHelper:
-        class: PHPStan\File\RelativePathHelper
-        factory: PHPStan\File\SimpleRelativePathHelper
-        arguments:
-            currentWorkingDirectory: %currentWorkingDirectory%
-        autowired: false

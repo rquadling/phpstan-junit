@@ -40,25 +40,13 @@ You will need to add the appropriate service entry to your `phpstan.neon` file i
 services:
     errorFormatter.junit:
         class: RQuadling\PHPStan\ErrorFormatter\JunitErrorFormatter
-
-    relativePathHelper:
-        class: PHPStan\File\RelativePathHelper
-        dynamic: true
-        autowired: true
-
-    simpleRelativePathHelper:
-        class: PHPStan\File\RelativePathHelper
-        factory: PHPStan\File\SimpleRelativePathHelper
-        arguments:
-            currentWorkingDirectory: %currentWorkingDirectory%
-        autowired: false
 ```
 ### Generate JUnit report
 
-You can generate JUnit reports using `--error-format=junit`, eg:
+You can generate JUnit reports using `--errorFormat junit`, eg:
 
 ```bash
-vendor/bin/phpstan --configuration=phpstan.neon --error-format=junit --level=7 --no-progress --no-interaction analyse SOURCE_CODE_DIR
+vendor/bin/phpstan --configuration phpstan.neon --errorFormat junit --level max --no-progress --no-interaction analyse SOURCE_CODE_DIR
 ```
 
 ## Contributing
