@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.3 - 2019-12-03
+
+- Re-releasing as I think I messed up the releases somehow 
+
 ## v0.4.2 - 2019-10-22
 
 ### Changes
